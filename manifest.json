@@ -1,11 +1,11 @@
 ﻿{
-    "name": "العاصمة",
-    "short_name": "العاصمة",
+    "name": "Dragon Express",
+    "short_name": "Dragon Express",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#060D18",
+    "theme_color": "#060D18",
+    "description": "Dragon Express — نظام إدارة الشحن والمناديب",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

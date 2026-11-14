@@ -18,23 +18,36 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="نظام إدارة الشحن والمناديب — العاصمة">
+  <meta name="description" content="Dragon Express — نظام إدارة الشحن والمناديب">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="asema">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png?v=2">
+  <meta name="apple-mobile-web-app-title" content="Dragon Express">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png?v=3">
 
   <!-- Favicon
        ⚠️ المتصفح بيخزّن الأيقونة بعناد أشد من الكاش العادي. الـ?v= بيخليه
        يعتبرها ملف جديد. لو غيّرت اللوجو تاني، زوّد الرقم. -->
-  <link rel="icon" type="image/png" href="favicon.png?v=2"/>
+  <link rel="icon" type="image/png" href="favicon.png?v=3"/>
 
-  <title>العاصمة — لوحة الإدارة</title>
+  <title>Dragon Express</title>
   <link rel="manifest" href="manifest.json">
 </head>
-<body>
+<body style="margin:0;background:#060D18">
+  <!-- ⚡ §3-92: شاشة تحميل خفيفة لحد أول فريم من فلاتر — بدل الصفحة البيضا
+       اللي كانت بتظهر ثواني على النت البطيء. بتتشال لوحدها مع أول فريم. -->
+  <div id="boot" style="position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:radial-gradient(circle at 50% 40%,#11233B,#060D18 70%);font-family:system-ui,sans-serif">
+    <img src="icons/Icon-192.png?v=3" width="132" height="132" alt="Dragon Express">
+    <div style="color:#EAF2FB;font-weight:800;letter-spacing:1px">Dragon Express</div>
+    <div style="width:120px;height:3px;border-radius:3px;background:#1C3554;overflow:hidden"><div style="width:40%;height:100%;background:#F5922B;animation:bt 1.1s ease-in-out infinite"></div></div>
+    <style>@keyframes bt{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}</style>
+  </div>
+  <script>(function(){function off(){var b=document.getElementById("boot");if(b)b.remove();}
+    window.addEventListener("flutter-first-frame",off);
+    // احتياطي: لو الحدث ماوصلش، نشيلها بعد ما فلاتر يحط الـview بشوية، وبحد أقصى ٢٠ ثانية
+    new MutationObserver(function(m,o){if(document.querySelector("flutter-view,flt-glass-pane")){o.disconnect();setTimeout(off,1500);}}).observe(document.body,{childList:true});
+    setTimeout(off,20000);})();</script>
   <!--
     You can customize the "flutter_bootstrap.js" script.
     This is useful to provide a custom configuration to the Flutter loader
